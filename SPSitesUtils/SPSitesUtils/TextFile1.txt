@@ -1,0 +1,59 @@
+﻿//list.BreakRoleInheritance(false, false);
+                        //siteCt.ExecuteQuery();
+
+                        //var role = new RoleDefinitionBindingCollection(siteCt);
+                        //role.Add(web.RoleDefinitions.GetByType(RoleType.Contributor));
+                        //User user = web.EnsureUser("app_ezshare_acp_front_off");
+
+                        //list.RoleAssignments.Add(user, role);
+                        //siteCt.ExecuteQuery();
+
+                        //CamlQuery query = CamlQuery.CreateAllItemsQuery();
+                        //ListItemCollection items = list.GetItems(query);
+
+                        //siteCt.Load(list.ContentTypes);
+                        siteCt.Load(list.RootFolder);
+                        siteCt.Load(list.RootFolder.Files);
+                        siteCt.Load(list.RootFolder.ListItemAllFields);
+                        siteCt.Load(list.RootFolder.Folders);
+                        //siteCt.Load(items);
+                        siteCt.ExecuteQuery();
+
+                        string ctList = string.Empty;
+                        /*foreach (var ct in list.ContentTypes)
+                        {
+                            ctList = ctList + ct.Name + "$";
+                        }
+
+                        string defaultCt = (ctList.Split('$').Length > 0) ? ctList.Split('$')[0] : "";*/
+
+                        //Log main security of the library
+                        string others = string.Empty; string ezRecordsMng = string.Empty; string everyone = string.Empty; string allCOFUsers = string.Empty; string powerUsers = string.Empty; string budgetPowerUsers = string.Empty; string hrPowerUsers = string.Empty; string corporateOff = string.Empty; string management = string.Empty; string frontOffice = string.Empty; string team = string.Empty; string convergenceSysAcc = string.Empty; string repository = string.Empty; string financeAndAcc = string.Empty; string recordPoint = string.Empty;
+
+
+                        var newString = subSiteUrl + ";" + list.Title + ";" + "" + ";" + ezRecordsMng + ";" + everyone + ";" +
+                                allCOFUsers + ";" + powerUsers + ";" + budgetPowerUsers + ";" + hrPowerUsers + ";" + corporateOff + ";" +
+                                management + ";" + frontOffice + ";" + team + ";" + convergenceSysAcc + ";" + repository + ";" + financeAndAcc + ";" + recordPoint + ";" + others;
+
+
+
+
+
+                        //Log security of each folder on the library                        
+                        foreach (Folder SubFolder in list.RootFolder.Folders.OrderBy(d => d.Name))
+                        {
+                            others = string.Empty; ezRecordsMng = string.Empty; everyone = string.Empty; allCOFUsers = string.Empty; powerUsers = string.Empty; budgetPowerUsers = string.Empty; hrPowerUsers = string.Empty; corporateOff = string.Empty; management = string.Empty; frontOffice = string.Empty; team = string.Empty; convergenceSysAcc = string.Empty; repository = string.Empty; financeAndAcc = string.Empty; recordPoint = string.Empty;
+
+                            if (SubFolder.Name != "Forms")
+                            {
+                                Console.WriteLine("SubFolder Name: " + SubFolder.Name);
+
+
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            return vLibraries;

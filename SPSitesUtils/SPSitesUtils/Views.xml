@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<IDBG>
+  <ContentTypes>
+    <CTName>ez-Standards and Policy</CTName>
+    <ViewNames Value="'All Documents', 'My Documents', 'Public Documents'" />
+    <Fields Value="'Type', 'Name', 'Modified', 'Editor', 'TaxKeyword', 'Identifier', 'Access_x0020_to_x0020_Information_x00A0_Policy', '_dlc_DocIdUrl'" />
+    <QueryXML Value="&lt;GroupBy Collapse='TRUE' GroupLimit='30' &gt;&lt;FieldRef Name='Access_x0020_to_x0020_Information_x00A0_Policy' /&gt;&lt;/GroupBy&gt;&lt;OrderBy&gt;&lt;FieldRef Name='Modified' Ascending='FALSE' /&gt;&lt;/OrderBy&gt;&lt;Where&gt;&lt;Neq&gt;&lt;FieldRef Name='Access_x0020_to_x0020_Information_x00A0_Policy' /&gt;&lt;Value Type='Text' &gt;Confidential&lt;/Value&gt;&lt;/Neq&gt;&lt;/Where&gt;" />
+  </ContentTypes>
+</IDBG>
+
